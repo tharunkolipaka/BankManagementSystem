@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="newUserstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+	<div class="navbar">
+        <div class="navbar-text">SHB BANK</div>
+    </div>
+    <div class="wrapper">
+        <header>New Account</header>
+        <form action="UserLogin" method="post">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="Name" name="name">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">UserName can't be blank</div>
+            </div>
+            <div class="field email">
+                <div class="input-area">
+                    <input type="number" placeholder="Mobile Number" name="phno">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Mobile Number can't be blank</div>
+            </div>
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="Email" name="email">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Email can't be blank</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="number" placeholder="Aadhaar Number 12-digit" name="aadhaar">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Aadhaar can't be blank</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="text" placeholder="PAN Number 10-digit" name="pan">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">PAN can't be blank</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="number" placeholder="PIN" name="pin" max="9999">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Password can't be blank</div>
+            </div>
+            <input type="submit" value="Create Account">
+        </form>
+        <!-- <div class="sign-txt">Not yet member? <a href="#">Signup now</a></div> -->
+    </div>
+</body>
+
+</html>

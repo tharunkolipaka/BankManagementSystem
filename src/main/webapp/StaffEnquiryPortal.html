@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Enquiry Portal</title>
+    <link rel="stylesheet" href="Adminstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+    	.login-btn {
+            display: block;
+            width: 100%;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        a{
+        	text-decoration : none;
+        }
+    </style>
+</head>
+
+<body>
+	<div class="navbar">
+        <div class="navbar-text">SHN BANK</div>
+    </div>
+    <div class="wrapper">
+        <header>Enter the Customer Mobile Number</header>
+        <form action="UserFromEmployee">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="Phone Number" name="Phno">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Phone Number can't be blank</div>
+            </div>
+            <input type="submit" value="Get Details">
+        </form>
+        <a href="EmployeeLogin.html">
+            <button class="login-btn">Back</button>
+         </a>
+    </div>
+</body>
+
+</html>

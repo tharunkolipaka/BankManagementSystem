@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+    <link rel="stylesheet" href="Adminstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+	<div class="navbar">
+        <div class="navbar-text">SHN BANK</div>
+    </div>
+    <div class="wrapper">
+        <header>Deposit</header>
+        <form action="CustoLogin">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="Amount" name="amount">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Amount can't be blank</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" placeholder="PIN" name="pin">
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">PIN can't be blank</div>
+            </div>
+            <input type="submit" value="Deposit" name="type">
+        </form>
+        <!-- <div class="sign-txt">Not yet member? <a href="#">Signup now</a></div> -->
+    </div>
+</body>
+
+</html>

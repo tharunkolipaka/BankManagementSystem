@@ -4,7 +4,6 @@ import java.util.Date;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -14,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import p2.DbUtil;
 
 /**
  * Servlet implementation class UserCreateAccount
@@ -45,7 +46,11 @@ public class UserCreateAccount extends HttpServlet {
 			// pw.println("Driver loaded");
 			
 			// Establish Connection 
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/BankManagementSystem","root","tiger");
+			Connection conn = String dbUrl = System.getenv("BANK_DB_URL");
+String dbUser = System.getenv("BANK_DB_USER");
+String dbPassword = System.getenv("BANK_DB_PASSWORD");
+
+Connection conn = DbUtil.getConnection();
 			// pw.println("Connection Established");
 			
 			// Statement Creation 

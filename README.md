@@ -1,54 +1,51 @@
 # 🏦 Bank Management System
 
-A Java-based web application that simulates core banking operations such as user account management, deposits, withdrawals, balance checking, fund transfers, and transaction tracking.
+A Java-based web application for managing common banking operations through a browser-based interface.
 
-The project demonstrates practical software development concepts including Java, JSP, HTML/CSS, database connectivity, authentication, and transaction-oriented application design.
+The project demonstrates Java web development using Servlets, JSP, HTML/CSS, JDBC, and MySQL.
 
 ## 🚀 Features
 
-### 👤 User Management
+### User Operations
 
 * User account creation
-* User login and authentication
-* Account details management
-* User information viewing
+* User login
+* Account information
+* Balance checking
+* Deposits
+* Withdrawals
+* Fund transfers
+* Transaction history
 
-### 💰 Banking Operations
-
-* Check account balance
-* Deposit funds
-* Withdraw funds
-* Transfer funds
-* Handle insufficient funds
-* View transaction history
-
-### 👨‍💼 Employee / Staff Operations
+### Employee Operations
 
 * Employee login
 * Employee registration
 * Customer/account enquiries
-* View user details
+* User detail viewing
 * Staff enquiry portal
 
-### 🔐 Application Handling
+### Application Handling
 
+* Account validation
 * Login validation
-* Invalid credential handling
-* Account existence validation
-* Error and failure pages
-* Input-based application workflows
+* Insufficient-funds handling
+* Invalid-credential handling
+* Dedicated error and status pages
 
 ## 🛠️ Tech Stack
 
 | Technology        | Purpose                        |
 | ----------------- | ------------------------------ |
-| **Java**          | Application and business logic |
-| **JSP**           | Dynamic web pages              |
-| **HTML**          | Web page structure             |
-| **CSS**           | User interface styling         |
-| **MySQL**         | Database                       |
-| **JDBC**          | Database connectivity          |
-| **Apache Tomcat** | Java web application server    |
+| Java              | Application and business logic |
+| Java Servlets     | Request handling               |
+| JSP               | Dynamic web pages              |
+| HTML              | Page structure                 |
+| CSS               | Styling                        |
+| JDBC              | Database connectivity          |
+| MySQL             | Data persistence               |
+| MySQL Connector/J | JDBC driver                    |
+| Apache Tomcat     | Web application server         |
 
 ## 📂 Project Structure
 
@@ -70,165 +67,137 @@ BankManagementSystem/
 │       │       └── DbUtil.java
 │       │
 │       └── webapp/
-│           ├── *.html
-│           ├── *.jsp
-│           ├── *.css
-│           ├── META-INF/
+│           ├── HTML pages
+│           ├── JSP pages
+│           ├── CSS files
 │           └── WEB-INF/
 │
 ├── .gitignore
 └── README.md
 ```
 
-## 🔑 Core Modules
+## 🔄 Application Workflow
 
-### Authentication
-
-The application provides separate login workflows for users and employees with validation for incorrect credentials.
-
-### Account Management
-
-Users can create accounts and access account-related information through the web interface.
-
-### Transactions
-
-The system supports common banking operations including:
-
-* Deposits
-* Withdrawals
-* Fund transfers
-* Balance checking
-* Transaction history
-
-### Employee Portal
-
-Employees have dedicated functionality for managing and enquiring about customer account information.
+```text
+User / Employee
+       ↓
+     Login
+       ↓
+ Authentication
+       ↓
+ ┌─────┴─────┐
+ ↓           ↓
+User       Employee
+Portal      Portal
+ ↓           ↓
+Banking     Customer
+Operations  Enquiries
+ ↓
+MySQL Database
+```
 
 ## 🗄️ Database
 
-The application uses **MySQL** for storing banking and user-related information.
+The application uses MySQL for persistent storage and JDBC for database connectivity.
 
-Database connectivity is handled through **JDBC** using MySQL Connector/J.
+Database configuration should be supplied through local environment variables rather than committed credentials.
 
-> Database configuration should be updated according to your local MySQL environment before running the application.
+Example:
+
+```text
+BANK_DB_URL
+BANK_DB_USER
+BANK_DB_PASSWORD
+```
 
 ## ⚙️ Getting Started
 
 ### Prerequisites
 
-Make sure the following are installed:
+Install:
 
 * Java JDK
 * MySQL Server
 * Apache Tomcat
-* IDE such as IntelliJ IDEA, Eclipse, or VS Code
-* MySQL Connector/J
+* An IDE such as Eclipse, IntelliJ IDEA, or VS Code
 
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/tharunkolipaka/BankManagementSystem.git
 cd BankManagementSystem
 ```
 
-### 2. Configure MySQL
+### Configure the Database
 
-Create the required database and tables based on the application's database configuration.
+Create the `BankManagementSystem` database and configure the required tables.
 
-Update the database connection settings in:
+Set the database connection variables in your local environment.
 
-```text
-src/main/java/p2/DbUtil.java
-```
+### Run the Application
 
-with your MySQL username, password, database name, and connection URL.
+Deploy the web application to Apache Tomcat and start the server.
 
-### 3. Configure the Application Server
+Open the deployed application in your browser.
 
-Deploy the project using Apache Tomcat.
+## 🔐 Security Improvements
 
-Make sure the required MySQL JDBC driver is available to the application.
+The project is being improved to follow better security practices, including:
 
-### 4. Run the Application
-
-Start the Tomcat server and open the application through the deployed URL.
-
-## 🧪 Functional Areas
-
-The application currently contains pages and workflows for:
-
-* User login
-* User registration
-* Employee login
-* Employee registration
-* Account existence validation
-* Balance checking
-* Deposits
-* Withdrawals
-* Fund transfers
-* Transaction history
-* User enquiries
-* Staff enquiries
-* Error handling
-
-## 📸 Screenshots
-
-Screenshots can be added here to demonstrate:
-
-* Login page
-* User dashboard
-* Account creation
-* Balance page
-* Deposit/withdrawal workflow
-* Fund transfer
-* Transaction history
-* Employee portal
-
-Example:
-
-```text
-screenshots/
-├── login.png
-├── dashboard.png
-├── account-creation.png
-├── transactions.png
-└── employee-portal.png
-```
+* Removing database credentials from source code
+* Using `PreparedStatement` for database queries
+* Improving authentication handling
+* Avoiding plaintext password storage
+* Improving input validation
 
 ## 🎯 Learning Outcomes
 
-This project helped strengthen practical knowledge of:
+This project demonstrates practical experience with:
 
-* Java programming
-* Object-oriented programming
-* Java web application development
+* Core Java
+* Java Servlets
 * JSP
-* HTML/CSS
 * JDBC
-* MySQL database integration
+* MySQL
+* HTML/CSS
+* CRUD-style application development
 * Authentication workflows
-* CRUD-style application logic
-* Exception and error handling
+* Database integration
+* Exception handling
+* Web application structure
 
 ## 🔮 Future Enhancements
 
-Planned improvements include:
-
-* Password hashing and stronger authentication
-* Improved UI/UX
+* Password hashing
+* Role-based authorization
 * Transaction audit logging
+* Improved responsive UI
+* Automated testing
 * REST API integration
-* Automated unit and integration testing
-* Improved database security
-* Input validation and sanitization
-* Responsive frontend design
-* Deployment to a cloud platform
+* Better validation and error handling
+* Cloud deployment
+
+## 📸 Screenshots
+
+Add screenshots of:
+
+```text
+Login
+Dashboard
+Account Creation
+Balance
+Deposit
+Withdrawal
+Fund Transfer
+Transaction History
+Employee Portal
+```
 
 ## 👨‍💻 Author
 
 **Tharun Kolipaka**
 
-GitHub: [@tharunkolipaka](https://github.com/tharunkolipaka)
+GitHub: https://github.com/tharunkolipaka
 
 ## 📄 License
 
